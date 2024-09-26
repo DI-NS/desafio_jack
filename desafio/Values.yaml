@@ -24,7 +24,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - host: localhost
+    - host: desafiojack.xyz
       paths:
         - path: /
           pathType: Prefix

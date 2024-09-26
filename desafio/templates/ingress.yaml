@@ -7,13 +7,13 @@ metadata:
     desafio: jackexperts
 spec:
   rules:
-    - host: desafio.jack  # m nome fictício para o dominio
+    - host: desafiojack.xyz  
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: desafio-service  # Nome real do seu serviço
+                name: desafio-service  
                 port:
                   number: 80
