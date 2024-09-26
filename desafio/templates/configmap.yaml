@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: desafio-html-configmap
+  labels:
+    desafio: jackexperts
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio Kubernetes com Helm</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                padding: 20px;
+            }
+            h1 {
+                color: #333; /* Removida a cor azul */
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .section h2 {
+                color: #333; /* Removida a cor azul */
+                border-bottom: 2px solid #333; /* Removida a cor azul */
+                padding-bottom: 5px;
+            }
+            .section ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            .section ul li {
+                margin-bottom: 10px;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 12px;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Desafio: jack experts</h1>
+
+            <div class="section">
+                <h2>Objetivo do Projeto</h2>
+                <p>Este projeto consiste na criação de uma aplicação simples com uma página HTML customizável, definida via Helm e hospedada em um cluster Kubernetes.</p>
+            </div>
+
+            <div class="section">
+                <h2>Requisitos Atendidos</h2>
+                <ul>
+                    <li>Repositório Git com Dockerfile e Helm</li>
+                    <li>Imagem publicada no Docker Hub e não roda como root</li>
+                    <li>Página HTML customizável via ConfigMap</li>
+                    <li>Helm define todos os objetos da aplicação</li>
+                    <li>Todos os objetos possuem a label <code>desafio=jackexperts</code></li>
+                    <li>Pipeline CI/CD configurada</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Documentação</h2>
+                <p>A documentação completa do projeto, incluindo instruções de uso, está disponível no repositório Git. Certifique-se de seguir todas as etapas para executar e testar a aplicação no Kubernetes.</p>
+            </div>
+
+            <div class="footer">
+                <p>Projeto realizado como parte do Desafio JackExperts - Kubernetes e Helm.</p>
+            </div>
+        </div>
+    </body>
+    </html>
