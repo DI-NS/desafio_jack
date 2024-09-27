@@ -3,10 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - '**'  
 
 jobs:
   build:
@@ -30,8 +27,8 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Build Docker image
-        run: docker build -t laynon/desafio-teste-pipeline:latest --label "jackexperts" .
+      - name: Build Docker image with timestamp as tag
+        run: docker build -t laynon/desafio:$(date +'%Y%m%d%H%M%S') --label "jackexperts" .
 
       - name: Push Docker image
-        run: docker push laynon/desafio-teste-pipeline:latest
+        run: docker push laynon/desafio:$(date +'%Y%m%d%H%M%S')
